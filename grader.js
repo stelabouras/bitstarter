@@ -75,7 +75,7 @@ if(require.main == module) {
     program
         .option('-c, --checks ', 'Path to checks.json', assertFileExists, CHECKSFILE_DEFAULT)
         .option('-f, --file ', 'Path to index.html', assertFileExists, HTMLFILE_DEFAULT)
-	.option('-u, --url [url] ', 'Site url')
+	.option('--url [url] ', 'Site url')
         .parse(process.argv);
 
 	if(typeof program.url != 'undefined')
