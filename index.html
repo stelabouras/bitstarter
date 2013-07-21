@@ -1,8 +1,9 @@
+
 <!DOCTYPE>
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>My First Bitstarter</title>
+		<title>Raspberry Spy</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup/code/bootstrap-combined.no-icons.min.css"/>
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css"/>
@@ -13,36 +14,11 @@
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css"/>
 		<style type="text/css">
 
-		/* Large desktop */
-		@media (min-width: 980px) {
-			body {
-				padding-top: 60px;
-			}
-			.linediv-l {
-				border-right: 1px white solid;
-			}
-			.linediv-r {
-				border-left: 1px white solid;
-			}
-		}
-
-		/* Landscape phonts and down */
-		@media (max-width: 480px) {
-			.copy {
-				padding: 2.5% 10%;
-			}
-			.linediv-l {
-				border-bottom: 1px white solid;
-			}
-			.linediv-r {
-				border-top: 1px white solid;
-			}
-		}
-
 		/* All form factors */
 
 		/* Main body and headings */
 		body { 
+			background: #f6f7f9;
 			font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 		}
 		.heading, .subheading {
@@ -63,18 +39,60 @@
 		.pitch {
 			padding: 2.5% 0%;
 		}
+		.quick-description {
+			color: #a1a3a7;
+			font-size: 20px;
+			line-height: 30px;
+			font-weight: 300;
+		}
 		.order {
 			padding: 2% 0%;
 		}
 		.actions {
-			background-color: #343434;
+			background-color: #fff;
+			border-radius: 1px solid #ddd;
+			box-shadow: 0 0 1px rgba(0, 0, 0, .25);
 			padding: 3% 0%;
 		}
 		.video, .thermometer, .order, .social, .statistics {
 			text-align: center;
 		}
+		.social {
+			margin-top: 20px;
+			text-align: left;
+		}
+		.statistics {
+			overflow: hidden;
+			margin-bottom: 10px;
+		}
 		.statistics h3, .statistics p {
-			color: white;
+			color: #bb0000;
+		}
+		.statistics p {
+			font-size: 14px;
+			color: #999;
+		}
+		.actions .backed {
+			color: #bb0000;
+			text-align: center;
+			font-weight: bold;
+			font-size: 24px;
+		}
+		.progress .bar-success {
+			background: #bb0000;
+		}
+		.progress .bar-warning {
+			background: #ddd;
+		}
+		.accordion-group {
+			border: none;
+			padding-bottom: 40px;
+			font-size: 19px;
+		}
+		.accordion-group .accordion-toggle {
+			color: #666;
+			font-weight: bold;
+			padding: 8px;
 		}
 
 		/* Marketing Copy and Footer */
@@ -96,9 +114,58 @@
 		.footer a {
 			color: #ccccff;
 		}
+
+
+		/* Large desktop */
+		@media (min-width: 980px) {
+			body {
+				padding-top: 60px;
+			}
+			.linediv-l {
+				border-right: 1px #ddd solid;
+			}
+			.linediv-r {
+				border-left: 1px #ddd solid;
+			}
+		}
+
+		@media (max-width: 979px) and (min-width: 768px) {
+
+			.container {
+				width: auto;
+			}
+		}
+
+		@media (max-width: 780px) {
+			.social {
+				text-align: center;
+			}
+			.quick-description {
+				margin: 20px 0;
+				text-align: center;
+			}
+			.actions {
+				padding: 10px;
+			}
+
+		}
+
+		/* Landscape phones and down */
+		@media (max-width: 480px) {
+			.copy {
+				padding: 2.5% 10%;
+			}
+			.linediv-l {
+				border-bottom: 1px #ddd solid;
+			}
+			.linediv-r {
+				border-top: 1px #ddd solid;
+			}
+		}
+
 		</style>
 	</head>
-	<body>
+	<body id="top">
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
@@ -108,12 +175,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="brand" href="#">Bitstarter</a>
 					<div class="nav-collapse collapse">
 						<ul class="nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
+							<li><a href="#top">Home</a></li>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#faq">FAQ</a></li>
 						</ul>
 					</div>
 				</div>
@@ -121,20 +187,29 @@
 		</div>
 
 
-		<div class="container">
+		<div class="container" id="home">
 			<div class="row-fluid heading">
 				<div class="span12">
-					<h1>Product</h1>
+					<h1>Raspberry Spy</h1>
 				</div>
 			</div>
 			<div class="row-fluid subheading">
 				<div class="span12">
-					<p class="lead">One sentence description.</p>
+					<p class="lead">The world's smallest surveillance system</p>
 				</div>
 			</div>
 			<div class="row-fluid pitch">
 				<div class="span5 offset1 video">
-					<img class="img-polaroid" src="http://placehold.it/480x300"/>
+					<img class="img-polaroid" src="http://i.imgur.com/1XWZ1ev.jpg"/>
+
+					<div class="social">
+						<button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
+						<button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+					</div>
+				</div>
+
+				<div class="span5 quick-description">
+					<p>Leave your home, go to sleep without worrying about intruders!</p>
 				</div>
 
 				<div class="span5 actions">
@@ -142,44 +217,48 @@
 						<div class="statistics">
 							<div class="span4">
 								<div class="linediv-l">
-								<h3>1000</h3> <p>backers</p>
+								<h3>100</h3> <p>backers</p>
 								</div>
 							</div>
 							<div class="span4">
 								<div class="linediv-c">
-								<h3>$6000</h3> <p>of $10,000</p>
+								<h3>$1,000</h3> <p>of $5,000</p>
 								</div>
 							</div>
 							<div class="span4">
 								<div class="linediv-r">
-								<h3>10</h3> <p>days left</p>
+								<h3>23</h3> <p>days left</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="span10 offset1">
 						<div class="thermometer progress active">
-							<div class="bar bar-success" style="width: 60%;"></div>
-							<div class="bar bar-warning" style="width: 40%;"></div>
+							<div class="bar bar-success" style="width: 20%;"></div>
+							<div class="bar bar-warning" style="width: 80%;"></div>
 						</div>
 					</div>
-					<div class="span6 offset3 order">
-						<button class="btn btn-success btn-large">Preorder</button>
+					<div class="span6 offset3">
+						<p class="backed">20% backed</p>
 					</div>
-					<div class="span8 offset2 social">
-						<button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
-						<button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+				</div>
+				<div class="span5">
+					<div class="span6 offset3 order">
+						<button class="btn btn-success btn-large">Get your spy &raquo;</button>
 					</div>
 				</div>
 			</div>
 
-			<div class="row-fluid section1">
+			<div class="row-fluid section1" id="features">
 				<div class="span5 offset1 asset">
-					<img class="img-polaroid" src="http://placehold.it/480x300"/>
+					<img class="img-polaroid" src="http://i.imgur.com/6mprbxD.jpg"/>
 				</div>
 				<div class="span5 copy">
+					<h3>Meet Raspberry Pi®</h3>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut risus sit amet odio semper fermentum ac nec tortor. Praesent sed lacus commodo, dignissim justo non, vestibulum massa. Etiam eget sollicitudin sapien. Curabitur vel lorem purus. Nam interdum turpis id libero adipiscing volutpat. Integer id commodo arcu. Pellentesque porttitor mi at diam condimentum tristique in at odio. Phasellus egestas interdum ligula, ullamcorper cursus diam auctor et. Aliquam cursus turpis hendrerit auctor tempus. Donec justo lacus, aliquet ut neque nec, porta mattis tortor. Duis tempor ullamcorper eros id vehicula. In a risus sit amet tortor vehicula ultrices ac vitae odio. Pellentesque.
+						The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video. We want to see it being used by kids all over the world to learn programming.
+
+						We plan to use <a href="http://www.raspberrypi.org/">Raspberry Pi</a> as the base of our hardware, along with the tweaked version of the <a href="http://uk.rs-online.com/web/p/video-modules/7757731/">camera module</a> to enable <a href="http://hackaday.com/2013/05/27/adding-night-vision-to-the-raspberry-pi-camera/">night vision</a>, in order to make it the ultimate surveillance system for your home!
 					</p>
 				</div>
 			</div>
@@ -187,15 +266,18 @@
 			<div class="row-fluid section2">
 				<div class="span5 offset1 copy copy-right">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut risus sit amet odio semper fermentum ac nec tortor. Praesent sed lacus commodo, dignissim justo non, vestibulum massa. Etiam eget sollicitudin sapien. Curabitur vel lorem purus. Nam interdum turpis id libero adipiscing volutpat. Integer id commodo arcu. Pellentesque porttitor mi at diam condimentum tristique in at odio. Phasellus egestas interdum ligula, ullamcorper cursus diam auctor et. Aliquam cursus turpis hendrerit auctor tempus. Donec justo lacus, aliquet ut neque nec, porta mattis tortor. Duis tempor ullamcorper eros id vehicula. In a risus sit amet tortor vehicula ultrices ac vitae odio. Pellentesque.
+						After analyzing frames through motion detection algorithms, your photos will be automatically pushed to your wifi network and from there to your mobile device, so you will have instant notification if someone's right outside your door, wherever you are!
+					</p>
+					<p>
+						For the wireless communication we will be using <a href="http://www.eye.fi/products/mobi">EyeFi cards</a> which will enchance Raspberry Pi with WiFi capabilities!
 					</p>
 				</div>
 				<div class="span5 asset">
-					<img class="img-polaroid" src="http://placehold.it/480x300"/>
+					<img class="img-polaroid" src="http://i.imgur.com/R33Tl8N.jpg"/>
 				</div>
 			</div>
 
-			<div class="row-fluid faq">
+			<div class="row-fluid faq" id="faq">
 				<div class="span10 offset1">
 					<h3>FAQ</h3>
 					<div class="accordion" id="accordion2">
@@ -203,12 +285,12 @@
 							<div class="accordion-heading">
 								<a class="accordion-toggle" data-toggle="collapse"
 								   data-parent="#accordion2" href="#collapseOne">
-								   What does FAQ stand for?
+									How do I set up my Raspberry Spy?
 								</a>
 							</div>
 							<div id="collapseOne" class="accordion-body collapse">
 								<div class="accordion-inner">
-									Frequently Asked Question.
+									It's easy! We will provide you with screws and you will be able to hook it everywhere you want! Then will follow our really simple guide to pair the device with your WiFi network and with your mobile device and you are ready to go!
 								</div>
 							</div>
 						</div>
@@ -216,12 +298,51 @@
 							<div class="accordion-heading">
 								<a class="accordion-toggle" data-toggle="collapse"
 								   data-parent="#accordion2" href="#collapseTwo">
-								   What's a Frequently Asked Question?
+									What will the campaign funds be used for?
 								</a>
 							</div>
 							<div id="collapseTwo" class="accordion-body collapse">
 								<div class="accordion-inner">
-									A question which is commonly asked by users.
+									The campaign funds will be used for the first manufacturing of Raspberry Spy and the production run.
+								</div>
+							</div>
+						</div>	
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse"
+								   data-parent="#accordion2" href="#collapseThree">
+								   	When is Raspberry Spy shipping?
+								</a>
+							</div>
+							<div id="collapseThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Raspberry Spy will ship Winter 2014/15.
+								</div>
+							</div>
+						</div>	
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse"
+								   data-parent="#accordion2" href="#collapseFour">
+								   What phones does Raspberry Spy work with?
+								</a>
+							</div>
+							<div id="collapseFour" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Works with iPhone 3G, 3GS, 4, 4S, 5, iPad 2nd, 3rd and 4th gen, iPad mini and iPod Touch 5th gen.
+								</div>
+							</div>
+						</div>	
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse"
+								   data-parent="#accordion2" href="#collapseFive">
+								   	Does Tile work on Android, Windows Phone, or Blackberry?
+								</a>
+							</div>
+							<div id="collapseFive" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Raspberry Spy will be released with iPhone support and Android, Windows Phone and Blackberry support will be added later.
 								</div>
 							</div>
 						</div>	
